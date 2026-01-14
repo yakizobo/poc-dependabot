@@ -1,0 +1,15 @@
+name: TAG [LISTENER] CI/CD
+
+run-name: "WORKFLOW TAG [LISTENER]: ${{ github.ref_name }}"
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  build:
+    name: TAG [LISTENER] CI/CD
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo TAG [LISTENER] CI/CD
+        run: echo "${{ github.ref_name }}"
